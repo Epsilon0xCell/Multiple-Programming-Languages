@@ -8,6 +8,12 @@ import time
 
 # build a shoddy random number generator
 def random():
+    # The seed is the current time in whole seconds, and that choice has
+    # two consequences worth knowing. Anyone who knows roughly when the
+    # script ran can reproduce the number, so this is a demonstration,
+    # not a source of secrets. And two calls inside the same second get
+    # the same seed and return the same value, which is why this file
+    # calls the function exactly once.
     seed = int(time.time())
     rng = np.random.default_rng(seed)
     return rng.random()
