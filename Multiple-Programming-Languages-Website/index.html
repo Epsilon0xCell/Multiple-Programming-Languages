@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Multiple-Programming-Languages</title>
+<!-- pages-campaign site for Epsilon0xCell/Multiple-Programming-Languages; source of truth: Multiple-Programming-Languages-Website/ on the default branch -->
+<style>
+/* I laid this out like a specimen drawer because the repo is a collection, not a program. Each file gets a label with its number, its file name, and only what I can say about it from reading or running it. */
+*{box-sizing:border-box}
+body{margin:0;background:#f3ecdc;color:#2b2118;font-family:"Iowan Old Style",Palatino,Georgia,serif;line-height:1.6}
+header{max-width:960px;margin:0 auto;padding:56px 28px 8px}
+header img.banner{width:100%;height:auto;display:block;border:1px solid #8a7a5c}
+.kicker{font-family:Helvetica,Arial,sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#7a6238;margin:36px 0 10px}
+h1{font-size:48px;line-height:1.05;margin:0 0 14px;font-weight:700}
+.lede{font-size:20px;max-width:640px;color:#4a3a26}
+.badges{margin:22px 0}
+.badges img{margin:0 6px 6px 0;vertical-align:middle}
+main{max-width:960px;margin:0 auto;padding:12px 28px 80px}
+h2{font-family:Helvetica,Arial,sans-serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;border-bottom:2px solid #2b2118;padding-bottom:8px;margin:52px 0 20px}
+p{max-width:680px}
+.specimen{display:grid;grid-template-columns:64px 1fr;gap:0 20px;padding:18px 0;border-bottom:1px solid #b8a67f}
+.specimen .no{font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#7a6238;padding-top:4px}
+.specimen h3{margin:0 0 4px;font-size:21px}
+.specimen h3 code{font-size:15px;font-family:ui-monospace,Menlo,monospace;font-weight:400;color:#6b5322}
+.specimen p{margin:0;color:#3d2f1e;font-size:16px}
+.tag{font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid #8a7a5c;padding:2px 7px;margin-left:8px;vertical-align:middle;white-space:nowrap}
+.chips span{display:inline-block;border:1px solid #2b2118;padding:4px 10px;margin:0 6px 8px 0;font-family:Helvetica,Arial,sans-serif;font-size:13px}
+a{color:#2b2118}
+footer{max-width:960px;margin:0 auto;padding:0 28px 56px;font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#6b5322;border-top:1px solid #b8a67f;padding-top:16px}
+</style>
+</head>
+<body>
+<header>
+<img class="banner" src="https://raw.githubusercontent.com/Epsilon0xCell/Multiple-Programming-Languages/main/banner.png" alt="Multiple-Programming-Languages banner">
+<p class="kicker">Catalogue of specimens, src/ drawer</p>
+<h1>Multiple-Programming-Languages</h1>
+<p class="lede">A small collection of example programs, one per language, kept as a tour rather than as a single project.</p>
+<div class="badges">
+<img src="https://img.shields.io/github/stars/Epsilon0xCell/Multiple-Programming-Languages" alt="Stars">
+<img src="https://img.shields.io/github/forks/Epsilon0xCell/Multiple-Programming-Languages" alt="Forks">
+<img src="https://img.shields.io/github/last-commit/Epsilon0xCell/Multiple-Programming-Languages" alt="Last commit">
+<img src="https://img.shields.io/github/languages/top/Epsilon0xCell/Multiple-Programming-Languages" alt="Top language">
+<img src="https://img.shields.io/github/repo-size/Epsilon0xCell/Multiple-Programming-Languages" alt="Repo size">
+</div>
+<img src="https://raw.githubusercontent.com/Epsilon0xCell/Multiple-Programming-Languages/main/logo.png" alt="Multiple-Programming-Languages logo" width="64" height="64">
+</header>
+<main>
+<h2>What this is</h2>
+<p>I keep one short file per language in <code>src/</code>. Each file stands alone. Nothing here builds into one program, and I did not try to make the files agree with each other. The point was to see how the same small jobs look when a different language does them.</p>
+<p>Some entries are one screen long. One is a notebook, one is a full assignment document, and one is a query written for a single repo. Where an entry is thin, its label below is thin too. I did not pad a label to make a short file look bigger.</p>
+<p>Two entries I have actually run are marked as run. The rest I read closely but did not run, because their toolchains are not installed here and I did not install new tools for this. The labels say which is which.</p>
+
+<h2>The specimens</h2>
+<!-- I numbered the labels in the order the README lists the files, so a reader can walk from this page to the drawer and find each file in the same place. -->
+<div class="specimen"><div class="no">No. 01</div><div><h3>Python <code>src/python.py</code><span class="tag">Run</span></h3><p>A tiny time seeded random number generator that prints one number between 0 and 1. It seeds from the current time in whole seconds, so two calls inside the same second return the same value. It only needs numpy. An unused matplotlib import that used to break it on plain machines is gone, and the number it computes is now printed instead of discarded.</p></div></div>
+<div class="specimen"><div class="no">No. 02</div><div><h3>Go <code>src/Go4Launch.go</code><span class="tag">Read only</span></h3><p>A program in package main that prints two launch lines: Go for launch, then Roger that, we are go for launch.</p></div></div>
+<div class="specimen"><div class="no">No. 03</div><div><h3>Julia <code>src/JuliaGoolia.jl</code><span class="tag">Read only</span></h3><p>Prints Fibonacci numbers below 100 by count, up to fib(99). Past fib(93) the 64 bit integers wrap, so the last values print negative even though the loop has not failed.</p></div></div>
+<div class="specimen"><div class="no">No. 04</div><div><h3>TypeScript <code>src/TypeScript.ts</code><span class="tag">Read only</span></h3><p>Prints a greeting, ola amigo, and then a star triangle built row by row. Row i gets i plus 1 stars.</p></div></div>
+<div class="specimen"><div class="no">No. 05</div><div><h3>C++ <code>src/c-p-p.cpp</code><span class="tag">Compiled and run</span></h3><p>Prints Hello World! and then a counting loop, the variable i equals 0 through 9. Compiled with g++ in the later pass and run, with that exact output.</p></div></div>
+<div class="specimen"><div class="no">No. 06</div><div><h3>HTML <code>src/html.html</code><span class="tag">Read only</span></h3><p>A plain HTML page, the ITcorp example page for Interrupt Technology Corporation, kept as the markup entry in the set.</p></div></div>
+<div class="specimen"><div class="no">No. 07</div><div><h3>Java <code>src/javajava.java</code><span class="tag">Read only</span></h3><p>A Hello world! program. The class is not marked public, which is what lets it live in a file named javajava.java instead of a file named after the class.</p></div></div>
+<div class="specimen"><div class="no">No. 08</div><div><h3>Jupyter <code>src/jupyterNotebook.ipynb</code><span class="tag">Parsed</span></h3><p>A tutorial notebook with markdown cells, a numpy random array cell, and a plotting section. Checked as valid JSON.</p></div></div>
+<div class="specimen"><div class="no">No. 09</div><div><h3>LaTeX <code>src/latex.tex</code><span class="tag">Read only</span></h3><p>A university assignment document for ENGE401 using the exam class, with worked solutions. This is the longest file in the drawer and the least like the others.</p></div></div>
+<div class="specimen"><div class="no">No. 10</div><div><h3>R <code>src/r.r</code><span class="tag">Read only</span></h3><p>Estimates pi by Monte Carlo. It draws 100,000 points in a unit square, counts the share inside the quarter circle, and multiplies that share by four.</p></div></div>
+<div class="specimen"><div class="no">No. 11</div><div><h3>Rust <code>src/rust.rs</code><span class="tag">Read only</span></h3><p>A guessing game for a number from 1 to 10. It needs a Cargo project with rand 0.8.3, as its own header says. It will not build with rustc on its own.</p></div></div>
+<div class="specimen"><div class="no">No. 12</div><div><h3>Solidity <code>src/solidity.sol</code><span class="tag">Read only</span></h3><p>A contract sketch pinned to Solidity 0.7.1, with hello, helloGas, and balance helpers. The getAccountBalance function is left as an empty exercise stub in the original, and it is still empty here.</p></div></div>
+<div class="specimen"><div class="no">No. 13</div><div><h3>SQL <code>src/sql.sql</code><span class="tag">Read only</span></h3><p>A ClickHouse style query that estimates contributor longevity from a GitHub events table. The repo name is hardcoded to bitcoin/bitcoin, so it answers for that repo only until that one string is edited.</p></div></div>
+
+<h2>Drawer list</h2>
+<p class="chips"><span>Python</span><span>Go</span><span>Julia</span><span>TypeScript</span><span>C++</span><span>HTML</span><span>Java</span><span>Jupyter</span><span>LaTeX</span><span>R</span><span>Rust</span><span>Solidity</span><span>SQL</span></p>
+
+<h2>Honest note</h2>
+<p>Only the Python and C++ entries were run. The Go, Java, Rust, Julia, R, LaTeX, Solidity, and SQL entries rest on reading the code, not on running it. Their toolchains are not installed in this environment and none was installed. The README states the same limit, and I would rather leave a label short than claim a run that never happened.</p>
+
+<p><a href="https://github.com/Epsilon0xCell/Multiple-Programming-Languages">Open the repo and the src/ drawer</a> &nbsp; <a href="https://github.com/Epsilon0xCell">My GitHub profile</a></p>
+</main>
+<footer>Built by Epsilon0xCell. Thirteen files, thirteen labels, two of them earned by running the code.</footer>
+</body>
+</html>
