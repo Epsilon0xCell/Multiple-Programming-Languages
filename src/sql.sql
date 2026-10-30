@@ -11,6 +11,9 @@
 # view multiple author's days active
 #---------------------------------------
 */
+-- I hardcode the repo name in the WHERE below, so this file only
+-- answers the question for bitcoin/bitcoin until I edit that one
+-- string. Nothing here takes the repo as an input.
 WITH dateDiff('day', toDateTime(earliest_seen), toDateTime(last_seen)) AS days_active
 SELECT
     days_active,
@@ -28,5 +31,10 @@ FROM
     GROUP BY actor_login
     ORDER BY days_active DESC
 )
+-- I filter after grouping, and this line does the excluding my
+-- header describes: a contributor whose first and last events land
+-- on the same day gets a span of zero and drops out here.
 WHERE days_active > 0
+-- I sort before I limit on purpose. If I limited first, I would get
+-- any hundred contributors instead of the hundred longest spans.
 LIMIT 100

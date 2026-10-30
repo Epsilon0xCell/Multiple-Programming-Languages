@@ -1,6 +1,10 @@
 /* basic contract structure:
  * https://solidity.readthedocs.io/en/v0.7.1/structure-of-a-contract.html
  */
+// I pin this to the 0.7 line with the caret, so it accepts 0.7.x
+// compilers and not 0.8. Code I copy from newer tutorials can fail
+// or behave differently here, because 0.8 changed defaults I rely
+// on below, such as how arithmetic overflow is handled.
 pragma solidity ^0.7.1;
 
 contract helloWorld{
@@ -21,6 +25,11 @@ uint value;
     //this function will do some calculation
     //note the button colour
     //remix will tell you exactly how much gas (21045)
+    // I return value++ and the position of the plus signs matters
+    // to me: the caller gets the number value held before this
+    // call, and only then does it go up by one, so my first call
+    // returns 0, not 1. Unlike hello above, this writes state, so
+    // it is a state changing call and not free.
     function helloGas() public returns(uint){
         return value++;
     }
@@ -38,6 +47,8 @@ uint value;
     }
     //How to output a user's (address) balance?
     function getAccountBalance() public view returns(uint){
-    //code here
+    // I have left this one as an empty exercise. Until I fill it
+    // in, it returns 0 by default, so I read a zero from it as not
+    // written yet, never as proof that an account holds nothing.
     }
 }
