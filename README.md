@@ -1,4 +1,4 @@
 ![Banner](banner.png)
 
-# multiple-programming-languages
-Multiple Programminf Languages Example
+# Multiple-Programming-Languages
+Multiple Programming Languages Example
