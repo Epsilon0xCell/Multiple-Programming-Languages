@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Multiple-Programming-Languages: The Phrasebook</title>
+<!-- pages-campaign site for Epsilon0xCell/Multiple-Programming-Languages; source of truth: Multiple-Programming-Languages-Website/ on the default branch -->
+<style>
+/* I built this page as a phrasebook. I give each language a chapter entry, I vary the width and offset as I go, and I print the code in mono under a serif heading. */
+*{box-sizing:border-box} body{margin:0;background:#f6efe0;color:#211a12;font-family:Georgia,"Times New Roman",serif;line-height:1.65}
+a{color:#7a2727} header{padding:48px 6vw 20px;max-width:1180px} header .banner{width:100%;border:1px solid #211a12}
+.kicker{font-family:ui-monospace,Menlo,monospace;letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:#7a2727}
+h1{font-size:clamp(38px,6vw,72px);line-height:.98;margin:.2em 0} h2{font-size:32px} .lede{font-size:20px;max-width:38em}
+.badges img{margin:0 6px 6px 0} main{padding:10px 6vw 70px;max-width:1180px}
+.chapter{border-top:3px double #211a12;padding:28px 0 36px;margin-top:28px}
+.chapter h3{font-size:30px;margin:.1em 0} .chapter h3 code{font-size:16px;font-family:ui-monospace,Menlo,monospace}
+.meta{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:#5c4a2e}
+.w-a{width:min(92%,760px)} .w-b{width:min(88%,680px);margin-left:9%} .w-c{width:min(94%,840px);margin-left:3%} .w-d{width:min(82%,620px);margin-left:14%} .w-e{width:min(90%,720px);margin-left:5%}
+.codefig{margin:16px 0} figcaption{font-size:14px;font-style:italic;color:#4d3d26;margin-bottom:6px}
+pre.capture{background:#211a12;color:#f6efe0;padding:16px 14px;overflow:auto;font-size:13px;line-height:1.55}
+pre.capture .ln{display:block;white-space:pre} pre.capture .ln::before{content:attr(data-n);display:inline-block;width:2.6em;color:#c9a86a;text-align:right;margin-right:1em;user-select:none}
+.output{background:#efe3c8;border-left:4px solid #7a2727;padding:12px 16px;font-family:ui-monospace,Menlo,monospace;white-space:pre-wrap}
+.sheet img{width:100%;height:auto;border:1px solid #211a12} .sheets{display:block} .sheet{margin:28px 0;max-width:820px} .sheet:nth-child(even){margin-left:10%}
+iframe.exhibit{width:100%;height:340px;border:1px solid #211a12;background:#fff}
+footer{padding:28px 6vw 50px;border-top:3px double #211a12}
+.js .chapter,.js .sheet{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease} .js .chapter.seen,.js .sheet.seen{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.js .chapter,.js .sheet{opacity:1;transform:none;transition:none}}
+</style></head><body>
+<header><img class="banner" src="https://raw.githubusercontent.com/Epsilon0xCell/Multiple-Programming-Languages/main/banner.png" alt="Banner for Multiple-Programming-Languages"><p class="kicker">Thirteen files in src/, thirteen chapter entries</p><h1>Multiple-Programming-Languages: The Phrasebook</h1><p class="lede">I keep thirteen small programs, one per language, each printed as written, and run where this machine honestly can run it. I wrote this page as a phrasebook because that is what the folder is: a short saying in each tongue, kept side by side so I can compare the shapes.</p>
+<div class="badges"><img src="https://img.shields.io/github/stars/Epsilon0xCell/Multiple-Programming-Languages" alt="Stars"><img src="https://img.shields.io/github/forks/Epsilon0xCell/Multiple-Programming-Languages" alt="Forks"><img src="https://img.shields.io/github/last-commit/Epsilon0xCell/Multiple-Programming-Languages" alt="Last commit"><img src="https://img.shields.io/github/languages/top/Epsilon0xCell/Multiple-Programming-Languages" alt="Top language"><img src="https://img.shields.io/github/repo-size/Epsilon0xCell/Multiple-Programming-Languages" alt="Repo size"><img src="https://img.shields.io/github/license/Epsilon0xCell/Multiple-Programming-Languages" alt="License"></div>
+<img src="https://raw.githubusercontent.com/Epsilon0xCell/Multiple-Programming-Languages/main/logo.png" alt="Logo for Multiple-Programming-Languages" width="88" height="88">
+<p>I ran the Python file and I compiled and ran the C++ file on this machine for this page, on 31 October 2026. I did not run the Go, Java, Rust, Julia, R, LaTeX, Solidity, or SQL examples here, because their toolchains are absent, and I say so at each entry. Their descriptions come from reading the code.</p></header>
+<main>
+<section><h2>How I read this book</h2><p>I ordered the chapters as the README lists the files. I show whole files where they are short, and honest excerpts where a whole file would bury the point, and I label every excerpt with its line range. I keep the line numbers aligned with the files at the baseline head so a reader can check me line for line.</p></section>
+
+<article class="chapter w-a"><h3>01. Python <code>src/python.py</code></h3><p class="meta">Run here. One number between 0 and 1.</p><p>I built a tiny time seeded random generator in this file. I seed from the current time in whole seconds, so two calls in one second return the same number, and I call the function once for that reason. An unused matplotlib import was removed in an earlier pass because it crashed machines without matplotlib. I only need numpy here.</p><figure class="codefig"><figcaption>Whole file, printed as written. I ran this file on this machine. Lines 1 to 22 of src/python.py.</figcaption><pre class="capture" data-src="python.py" data-start="1" data-end="22"><code><span class="ln" data-n="1"># python is a scripting language created in 1991 by Guido van Rossum</span>
+<span class="ln" data-n="2"># It is dynamically-typed and has extensive supporting libraries</span>
+<span class="ln" data-n="3"># Would recommend!</span>
+<span class="ln" data-n="4">#</span>
+<span class="ln" data-n="5"># python script for accessing system time and generating a random number</span>
+<span class="ln" data-n="6">import numpy as np</span>
+<span class="ln" data-n="7">import time</span>
+<span class="ln" data-n="8"></span>
+<span class="ln" data-n="9"># build a shoddy random number generator</span>
+<span class="ln" data-n="10">def random():</span>
+<span class="ln" data-n="11">    # I seed from the current time in whole seconds, and I keep two</span>
+<span class="ln" data-n="12">    # consequences in mind. Anyone who knows roughly when I ran this</span>
+<span class="ln" data-n="13">    # can reproduce the number, so I treat it as a demonstration and</span>
+<span class="ln" data-n="14">    # never as a source of secrets. Two calls inside the same second</span>
+<span class="ln" data-n="15">    # also get the same seed and return the same value, so I call this</span>
+<span class="ln" data-n="16">    # function exactly once below.</span>
+<span class="ln" data-n="17">    seed = int(time.time())</span>
+<span class="ln" data-n="18">    rng = np.random.default_rng(seed)</span>
+<span class="ln" data-n="19">    return rng.random()</span>
+<span class="ln" data-n="20"></span>
+<span class="ln" data-n="21"># call the function and print the pseudo random number it returns</span>
+<span class="ln" data-n="22">print(random())</span>
+</code></pre></figure><p>Real run output, produced by me running this file on 31 October 2026:</p><div class="output">0.5603507128868135</div></article>
+
+<article class="chapter w-b"><h3>02. Go <code>src/Go4Launch.go</code></h3><p class="meta">Printed, not run here.</p><p>I print two launch lines from package main. I did not compile or run this file in the repo verification pass, and I did not run it for this page.</p><figure class="codefig"><figcaption>Whole file, printed as written. I did not run this file here. Lines 1 to 14 of src/Go4Launch.go.</figcaption><pre class="capture" data-src="Go4Launch.go" data-start="1" data-end="14"><code><span class="ln" data-n="1">package main</span>
+<span class="ln" data-n="2"></span>
+<span class="ln" data-n="3">import (</span>
+<span class="ln" data-n="4">	&quot;fmt&quot;</span>
+<span class="ln" data-n="5">)</span>
+<span class="ln" data-n="6"></span>
+<span class="ln" data-n="7">// I put this in package main because that is what makes it a program</span>
+<span class="ln" data-n="8">// I can run instead of a library other code imports. The Go runtime</span>
+<span class="ln" data-n="9">// calls main for me, so nothing in this file calls it, and I should</span>
+<span class="ln" data-n="10">// not go looking for a caller.</span>
+<span class="ln" data-n="11">func main() {</span>
+<span class="ln" data-n="12">	fmt.Println(&quot;Go for launch&quot;)</span>
+<span class="ln" data-n="13">  fmt.Println(&quot;Roger that, we are go for launch&quot;)</span>
+<span class="ln" data-n="14">}</span>
+</code></pre></figure></article>
+
+<article class="chapter w-c"><h3>03. Julia <code>src/JuliaGoolia.jl</code></h3><p class="meta">Printed, not run here.</p><p>I print Fibonacci numbers in this script. The file loops toward 100 values, and its own comments note that plain 64 bit integers wrap past fib(93). I did not run this file here.</p><figure class="codefig"><figcaption>Whole file, printed as written. I did not run this file here. Lines 1 to 26 of src/JuliaGoolia.jl.</figcaption><pre class="capture" data-src="JuliaGoolia.jl" data-start="1" data-end="26"><code><span class="ln" data-n="1">println(&quot;Im Julia&quot;)</span>
+<span class="ln" data-n="2"></span>
+<span class="ln" data-n="3">println(&quot;This is Fibonacci&quot;)</span>
+<span class="ln" data-n="4">function fib(n)</span>
+<span class="ln" data-n="5">    x,y = (0,1)</span>
+<span class="ln" data-n="6">    # I swap x and y in a single tuple assignment because the right</span>
+<span class="ln" data-n="7">    # hand side is worked out before either name changes. If I set x</span>
+<span class="ln" data-n="8">    # first and then built the new y from it, I would feed the new x</span>
+<span class="ln" data-n="9">    # into the same step and break the sequence.</span>
+<span class="ln" data-n="10">    for i = 1:n x,y = (y, x+y) end</span>
+<span class="ln" data-n="11">    # After n swaps I return x, so fib(0) gives me 0 and fib(1) gives</span>
+<span class="ln" data-n="12">    # me 1.</span>
+<span class="ln" data-n="13">    x</span>
+<span class="ln" data-n="14">end</span>
+<span class="ln" data-n="15"></span>
+<span class="ln" data-n="16">let x = 0</span>
+<span class="ln" data-n="17">    # I run this up to 99 to watch the sequence grow, but I know the</span>
+<span class="ln" data-n="18">    # values stop being true near the end: plain integers here are</span>
+<span class="ln" data-n="19">    # 64 bit and wrap instead of growing past their limit, which</span>
+<span class="ln" data-n="20">    # fib(93) crosses, so the last few values print negative even</span>
+<span class="ln" data-n="21">    # though nothing in the loop has failed.</span>
+<span class="ln" data-n="22">    while x &lt; 100</span>
+<span class="ln" data-n="23">        println(fib(x))</span>
+<span class="ln" data-n="24">        x += 1</span>
+<span class="ln" data-n="25">    end</span>
+<span class="ln" data-n="26">end</span>
+</code></pre></figure></article>
+
+<article class="chapter w-d"><h3>04. TypeScript <code>src/TypeScript.ts</code></h3><p class="meta">Printed, not run here.</p><p>I print a greeting, ola amigo, and then a star triangle built row by row, with row i getting i plus 1 stars.</p><figure class="codefig"><figcaption>Whole file, printed as written. I did not run this file here. Lines 1 to 16 of src/TypeScript.ts.</figcaption><pre class="capture" data-src="TypeScript.ts" data-start="1" data-end="16"><code><span class="ln" data-n="1">// comment here; love the double-slash java styles</span>
+<span class="ln" data-n="2">var text:string = &quot;ola amigo&quot;;</span>
+<span class="ln" data-n="3">console.log(text);</span>
+<span class="ln" data-n="4"></span>
+<span class="ln" data-n="5">// I build each row in a string first and print it once. If I printed</span>
+<span class="ln" data-n="6">// star by star, every star would land on its own line instead of</span>
+<span class="ln" data-n="7">// forming a row.</span>
+<span class="ln" data-n="8">for (let i: number = 0; i &lt; 5; ++i) {</span>
+<span class="ln" data-n="9">  let line: string = &quot;&quot;;</span>
+<span class="ln" data-n="10">  // The inner test is j &lt;= i, so row i gets i + 1 stars. With j &lt; i</span>
+<span class="ln" data-n="11">  // the first row would print nothing at all.</span>
+<span class="ln" data-n="12">  for (let j: number = 0; j &lt;= i; ++j) {</span>
+<span class="ln" data-n="13">    line += &quot;*&quot;;</span>
+<span class="ln" data-n="14">  }</span>
+<span class="ln" data-n="15">  console.log(line);</span>
+<span class="ln" data-n="16">}</span>
+</code></pre></figure></article>
+
+<article class="chapter w-e"><h3>05. C++ <code>src/c-p-p.cpp</code></h3><p class="meta">Compiled with g++ and run here.</p><p>I print Hello World! and then a counting loop from 0 through 9. I compiled this file with g++ for this page and ran the binary I built.</p><figure class="codefig"><figcaption>Whole file, printed as written. I compiled this file with g++ on this machine and ran it. Lines 1 to 18 of src/c-p-p.cpp.</figcaption><pre class="capture" data-src="c-p-p.cpp" data-start="1" data-end="18"><code><span class="ln" data-n="1">#include &lt;iostream&gt;</span>
+<span class="ln" data-n="2">// remember make files?</span>
+<span class="ln" data-n="3">// I pull the std names in wholesale so I can write cout on its own.</span>
+<span class="ln" data-n="4">// That is fine at this size, but I know it can clash with my own</span>
+<span class="ln" data-n="5">// names in a bigger file, so I would not carry it into one.</span>
+<span class="ln" data-n="6">using namespace std;</span>
+<span class="ln" data-n="7">int main() {</span>
+<span class="ln" data-n="8">  cout &lt;&lt; &quot;Hello World!\n&quot;;</span>
+<span class="ln" data-n="9"></span>
+<span class="ln" data-n="10">// still my favourite loop syntax</span>
+<span class="ln" data-n="11">  // I stop at i&lt;10, so I get 0 through 9. That is ten lines, and</span>
+<span class="ln" data-n="12">  // writing i&lt;=10 would give me an eleventh I do not want.</span>
+<span class="ln" data-n="13">  for (int i=0; i&lt;10; i++){</span>
+<span class="ln" data-n="14">    cout &lt;&lt; &quot;the variable i=&quot;&lt;&lt; i&lt;&lt; &#x27;\n&#x27;;</span>
+<span class="ln" data-n="15">  }</span>
+<span class="ln" data-n="16">  // I leave out a return statement on purpose: main is the one</span>
+<span class="ln" data-n="17">  // function that reports 0 on its own when it ends like this.</span>
+<span class="ln" data-n="18">}</span>
+</code></pre></figure><p>Real output from my compile and run on 31 October 2026:</p><div class="output">Hello World!
+the variable i=0
+the variable i=1
+the variable i=2
+the variable i=3
+the variable i=4
+the variable i=5
+the variable i=6
+the variable i=7
+the variable i=8
+the variable i=9</div></article>
+
+<article class="chapter w-b"><h3>06. HTML <code>src/html.html</code></h3><p class="meta">Source excerpt plus the file itself, rendered.</p><p>I keep a plain HTML page here, the ITcorp example for Interrupt Technology Corporation. Below the source excerpt I embed the file itself rendered, labelled as the file itself, so a reader sees both the markup and what a browser does with it.</p><figure class="codefig"><figcaption>Source excerpt, printed as written. Lines 1 to 20 of src/html.html.</figcaption><pre class="capture" data-src="html.html" data-start="1" data-end="20"><code><span class="ln" data-n="1">&lt;!--The following is the html content for a webpage that been live since 1986: </span>
+<span class="ln" data-n="2">http://itcorp.com/. </span>
+<span class="ln" data-n="3">Souce attribution: https://thoughtcatalog.com/jeremy-london/2018/09/oldest-websites-on-the-internet/</span>
+<span class="ln" data-n="4">--&gt;</span>
+<span class="ln" data-n="5">&lt;HTML&gt;</span>
+<span class="ln" data-n="6">&lt;HEAD&gt;</span>
+<span class="ln" data-n="7">&lt;TITLE&gt;ITcorp.com&lt;/TITLE&gt;</span>
+<span class="ln" data-n="8">&lt;/HEAD&gt;</span>
+<span class="ln" data-n="9">&lt;BODY&gt;</span>
+<span class="ln" data-n="10">&lt;CENTER&gt;</span>
+<span class="ln" data-n="11">&lt;H1&gt;Interrupt Technology Corporation&lt;/H1&gt;</span>
+<span class="ln" data-n="12">&lt;/CENTER&gt;</span>
+<span class="ln" data-n="13"></span>
+<span class="ln" data-n="14">&lt;P&gt;</span>
+<span class="ln" data-n="15">This is the home page of Interrupt Technology Corporation. If you are</span>
+<span class="ln" data-n="16">looking for another company that calls itself &quot;ITcorp&quot;, you&#x27;ll have to</span>
+<span class="ln" data-n="17">try typing the company&#x27;s full name into a search engine.</span>
+<span class="ln" data-n="18"></span>
+<span class="ln" data-n="19">&lt;H2&gt;What Do We Do?&lt;/H2&gt;</span>
+<span class="ln" data-n="20"></span>
+</code></pre></figure><figure><figcaption>The file itself rendered: src/html.html shown in an iframe from its own source.</figcaption><iframe class="exhibit" title="Rendered src/html.html" srcdoc="&lt;!--The following is the html content for a webpage that been live since 1986: 
+http://itcorp.com/. 
+Souce attribution: https://thoughtcatalog.com/jeremy-london/2018/09/oldest-websites-on-the-internet/
+--&gt;
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;ITcorp.com&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;CENTER&gt;
+&lt;H1&gt;Interrupt Technology Corporation&lt;/H1&gt;
+&lt;/CENTER&gt;
+
+&lt;P&gt;
+This is the home page of Interrupt Technology Corporation. If you are
+looking for another company that calls itself &quot;ITcorp&quot;, you&#x27;ll have to
+try typing the company&#x27;s full name into a search engine.
+
+&lt;H2&gt;What Do We Do?&lt;/H2&gt;
+
+&lt;P&gt;
+We are a small, privately held software consulting firm specializing
+in file systems, storage systems, and computer measurement. We also
+provide expert-witness services in those areas. If you have a need for
+our services, you may contact itcorp at itcorp.com (replacing the &quot;at&quot;
+with an @ sign).
+
+&lt;H2&gt;Why Is This Web Page So Plain?&lt;/H2&gt;
+
+&lt;P&gt;
+We do not actively seek outside business. This Web page exists primarily
+to satisfy the needs of those who expect every domain to have a Web
+presence.
+
+&lt;/BODY&gt;
+&lt;/HTML&gt;
+"></iframe></figure></article>
+
+<article class="chapter w-a"><h3>07. Java <code>src/javajava.java</code></h3><p class="meta">Printed, not run here.</p><p>I print Hello world! from a class I deliberately leave non public, so it can live in a file named javajava.java. I did not run this file here.</p><figure class="codefig"><figcaption>Whole file, printed as written. I did not run this file here. Lines 1 to 11 of src/javajava.java.</figcaption><pre class="capture" data-src="javajava.java" data-start="1" data-end="11"><code><span class="ln" data-n="1">// basic java hello world from replit</span>
+<span class="ln" data-n="2">// I do not mark Main public, and that choice is load bearing: a</span>
+<span class="ln" data-n="3">// public class has to sit in a file with its own name, so a public</span>
+<span class="ln" data-n="4">// Main could not live in javajava.java. The launcher also needs the</span>
+<span class="ln" data-n="5">// exact main shape below, public static void with a String array,</span>
+<span class="ln" data-n="6">// or the file compiles and still refuses to run.</span>
+<span class="ln" data-n="7">class Main {</span>
+<span class="ln" data-n="8">  public static void main(String[] args) {</span>
+<span class="ln" data-n="9">    System.out.println(&quot;Hello world!&quot;);</span>
+<span class="ln" data-n="10">  }</span>
+<span class="ln" data-n="11">}</span>
+</code></pre></figure></article>
+
+<article class="chapter w-c"><h3>08. Jupyter <code>src/jupyterNotebook.ipynb</code></h3><p class="meta">Notebook cell, taken from the notebook JSON.</p><p>I made this notebook as a tutorial, with markdown cells, a numpy random array cell, and a plotting section. The cell below is the numpy random array cell, taken directly from the notebook JSON.</p><figure class="codefig"><figcaption>Notebook cell, printed from the notebook JSON. I label it as a notebook cell, not as a standalone file.</figcaption><pre class="capture" data-src="jupyterNotebook.ipynb" data-cell="numpy"><code><span class="ln" data-n="1"># lets output some random numbers!</span>
+<span class="ln" data-n="2">import numpy as np</span>
+<span class="ln" data-n="3">rng = np.random.default_rng(seed=42)</span>
+<span class="ln" data-n="4">array = rng.random((100, 1))</span>
+<span class="ln" data-n="5">array[:20]</span>
+</code></pre></figure></article>
+
+<article class="chapter w-d"><h3>09. LaTeX <code>src/latex.tex</code></h3><p class="meta">Document excerpt, not run.</p><p>I keep an ENGE401 university assignment here, with worked solutions. I show the preamble as an excerpt and I label it as a document, not as a program I ran.</p><figure class="codefig"><figcaption>Opening excerpt, printed as written. I read this as a document, I did not compile it here. Lines 1 to 20 of src/latex.tex.</figcaption><pre class="capture" data-src="latex.tex" data-start="1" data-end="20"><code><span class="ln" data-n="1">% This is an example of a latex file for an assignment in</span>
+<span class="ln" data-n="2">% a university math class</span>
+<span class="ln" data-n="3">%</span>
+<span class="ln" data-n="4">%------------------------------------------------------------</span>
+<span class="ln" data-n="5">%---------------- A S S I G N M E N T - 1 -------------------</span>
+<span class="ln" data-n="6">%------------------------------------------------------------</span>
+<span class="ln" data-n="7">\documentclass[a4paper,12pt,addpoints]{exam}</span>
+<span class="ln" data-n="8">\usepackage{graphicx}</span>
+<span class="ln" data-n="9">\usepackage[usenames,svgnames]{xcolor}</span>
+<span class="ln" data-n="10">\usepackage{wrapfig}</span>
+<span class="ln" data-n="11">\usepackage{hyperref}</span>
+<span class="ln" data-n="12">\usepackage{multicol,booktabs,enumitem}</span>
+<span class="ln" data-n="13">\usepackage{siunitx,textcomp}%for the degree symbol: The angle is \ang{30}.</span>
+<span class="ln" data-n="14">\usepackage{amsmath,amssymb}</span>
+<span class="ln" data-n="15">\usepackage{pgfplots}</span>
+<span class="ln" data-n="16">\pgfplotsset{colormap/blackwhite}</span>
+<span class="ln" data-n="17">\usepgfplotslibrary{fillbetween}</span>
+<span class="ln" data-n="18">\usepackage{hyperref}</span>
+<span class="ln" data-n="19">\hypersetup{</span>
+<span class="ln" data-n="20">	colorlinks,</span>
+</code></pre></figure></article>
+
+<article class="chapter w-e"><h3>10. R <code>src/r.r</code></h3><p class="meta">Printed, not run here. No R on this machine.</p><p>I estimate pi by Monte Carlo in this script. I draw 100,000 points, I count the share inside the quarter circle, and I multiply that share by four.</p><figure class="codefig"><figcaption>Monte Carlo core excerpt, printed as written. I did not run this file here, because I have no R on this machine. Lines 3 to 22 of src/r.r.</figcaption><pre class="capture" data-src="r.r" data-start="3" data-end="22"><code><span class="ln" data-n="3">set.seed(0.537916728589)</span>
+<span class="ln" data-n="4"># I set the seed before either runif call, and the order is the</span>
+<span class="ln" data-n="5"># point: both vectors draw from the same stream in this order, so I</span>
+<span class="ln" data-n="6"># get the same points on every run and can compare plots. If I moved</span>
+<span class="ln" data-n="7"># this line below the draws, it would do nothing for me.</span>
+<span class="ln" data-n="8"></span>
+<span class="ln" data-n="9"># random vectors of length 100k</span>
+<span class="ln" data-n="10">x=runif(100000)</span>
+<span class="ln" data-n="11">y=runif(100000)</span>
+<span class="ln" data-n="12"></span>
+<span class="ln" data-n="13"># radius</span>
+<span class="ln" data-n="14">z=sqrt(x^2+y^2)</span>
+<span class="ln" data-n="15"></span>
+<span class="ln" data-n="16"># count the number of points inside the quarter-circle</span>
+<span class="ln" data-n="17">which(z&lt;1)</span>
+<span class="ln" data-n="18"># I multiply the inside share by four because of the shapes, not by</span>
+<span class="ln" data-n="19"># habit. My points fill a unit square, the z &lt;= 1 points fill a</span>
+<span class="ln" data-n="20"># quarter circle inside it, and a quarter circle has area pi over</span>
+<span class="ln" data-n="21"># four, so the share times four estimates pi.</span>
+<span class="ln" data-n="22">length(which(z&lt;=1))*4/length(z)</span>
+</code></pre></figure></article>
+
+<article class="chapter w-a"><h3>11. Rust <code>src/rust.rs</code></h3><p class="meta">Printed, not run here. Needs a Cargo project with rand 0.8.3.</p><p>I wrote a guessing game for a number from 1 to 10. Its own header comment says it needs a Cargo project with rand 0.8.3, and I repeat that requirement here because the file will not build with rustc on its own.</p><figure class="codefig"><figcaption>Header comment and opening lines, printed as written. I did not run this file here. Lines 1 to 17 of src/rust.rs.</figcaption><pre class="capture" data-src="rust.rs" data-start="1" data-end="17"><code><span class="ln" data-n="1">//Requires a Cargo.toml as follows:</span>
+<span class="ln" data-n="2">/*</span>
+<span class="ln" data-n="3">[package]</span>
+<span class="ln" data-n="4">name = &quot;MarsInRust&quot;</span>
+<span class="ln" data-n="5">version = &quot;0.1.1&quot;</span>
+<span class="ln" data-n="6">authors = [&quot;millecodex&quot;]</span>
+<span class="ln" data-n="7">edition = &quot;2021&quot;</span>
+<span class="ln" data-n="8"></span>
+<span class="ln" data-n="9"># See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html</span>
+<span class="ln" data-n="10"></span>
+<span class="ln" data-n="11">[dependencies]</span>
+<span class="ln" data-n="12">rand = &quot;0.8.3&quot;</span>
+<span class="ln" data-n="13">*/</span>
+<span class="ln" data-n="14"></span>
+<span class="ln" data-n="15">use std::io;</span>
+<span class="ln" data-n="16">use rand::Rng;</span>
+<span class="ln" data-n="17"></span>
+</code></pre></figure><figure class="codefig"><figcaption>Main excerpt, printed as written. I did not run this file here. Lines 18 to 35 of src/rust.rs.</figcaption><pre class="capture" data-src="rust.rs" data-start="18" data-end="35"><code><span class="ln" data-n="18">// I keep the manifest note at the top because this file will not</span>
+<span class="ln" data-n="19">// build with rustc on its own. rand is an outside crate, so Cargo</span>
+<span class="ln" data-n="20">// has to fetch it and link it before any of this runs.</span>
+<span class="ln" data-n="21">fn main() {</span>
+<span class="ln" data-n="22">    // generates a random positive integer from 1-10, inclusive</span>
+<span class="ln" data-n="23">    // I write the range as 1..11 because the top end is excluded.</span>
+<span class="ln" data-n="24">    // I want 1 through 10, and 1..10 would quietly stop at 9.</span>
+<span class="ln" data-n="25">    let secret_number: u8 = rand::thread_rng().gen_range(1..11);</span>
+<span class="ln" data-n="26"></span>
+<span class="ln" data-n="27">    loop {</span>
+<span class="ln" data-n="28">        println!(&quot;What&#x27;s your guess?&quot;);</span>
+<span class="ln" data-n="29">        let mut user_guess: String = String::new();</span>
+<span class="ln" data-n="30">        // I split two failures that look alike. If read_line itself</span>
+<span class="ln" data-n="31">        // fails, that is a real input problem, so I let expect stop</span>
+<span class="ln" data-n="32">        // the program. A guess I simply cannot parse is handled by</span>
+<span class="ln" data-n="33">        // the match below instead, and the game survives it.</span>
+<span class="ln" data-n="34">        io::stdin().read_line(&amp;mut user_guess).expect(&quot;Error encountered while getting the user input.&quot;);</span>
+<span class="ln" data-n="35"></span>
+</code></pre></figure></article>
+
+<article class="chapter w-b"><h3>12. Solidity <code>src/solidity.sol</code></h3><p class="meta">Printed, not run here. Solidity 0.7.1 sketch.</p><p>I sketched a contract pinned to Solidity 0.7.1. I left getAccountBalance as an exercise stub, empty in the original, and I label it that way here: the excerpt below includes that empty stub.</p><figure class="codefig"><figcaption>Excerpt including getAccountBalance, printed as written. I did not run this file here. Lines 40 to 51 of src/solidity.sol.</figcaption><pre class="capture" data-src="solidity.sol" data-start="40" data-end="51"><code><span class="ln" data-n="40">     * msg.value</span>
+<span class="ln" data-n="41">     * tx.gasprice</span>
+<span class="ln" data-n="42">     * block.number</span>
+<span class="ln" data-n="43">       etc.*/ </span>
+<span class="ln" data-n="44">    function getBalance() public view returns(uint){</span>
+<span class="ln" data-n="45">        //this is the contract balance, not the user account balance</span>
+<span class="ln" data-n="46">        return address(this).balance;</span>
+<span class="ln" data-n="47">    }</span>
+<span class="ln" data-n="48">    //How to output a user&#x27;s (address) balance?</span>
+<span class="ln" data-n="49">    function getAccountBalance() public view returns(uint){</span>
+<span class="ln" data-n="50">    // I have left this one as an empty exercise. Until I fill it</span>
+<span class="ln" data-n="51">    // in, it returns 0 by default, so I read a zero from it as not</span>
+</code></pre></figure></article>
+
+<article class="chapter w-c"><h3>13. SQL <code>src/sql.sql</code></h3><p class="meta">Printed, not run here. ClickHouse style example query, not portable SQL.</p><p>I wrote a ClickHouse style query that estimates contributor longevity from a GitHub events table. I hardcode bitcoin/bitcoin in the query, so it answers for that repo until I edit that string. I label it an example query, not portable SQL.</p><figure class="codefig"><figcaption>Excerpt, printed as written. I did not run this file here. Lines 16 to 38 of src/sql.sql.</figcaption><pre class="capture" data-src="sql.sql" data-start="16" data-end="38"><code><span class="ln" data-n="16">-- string. Nothing here takes the repo as an input.</span>
+<span class="ln" data-n="17">WITH dateDiff(&#x27;day&#x27;, toDateTime(earliest_seen), toDateTime(last_seen)) AS days_active</span>
+<span class="ln" data-n="18">SELECT</span>
+<span class="ln" data-n="19">    days_active,</span>
+<span class="ln" data-n="20">    actor_login,</span>
+<span class="ln" data-n="21">    last_seen</span>
+<span class="ln" data-n="22">FROM</span>
+<span class="ln" data-n="23">(</span>
+<span class="ln" data-n="24">    SELECT</span>
+<span class="ln" data-n="25">        MIN(created_at) AS earliest_seen,</span>
+<span class="ln" data-n="26">        MAX(created_at) AS last_seen,</span>
+<span class="ln" data-n="27">        days_active,</span>
+<span class="ln" data-n="28">        actor_login</span>
+<span class="ln" data-n="29">    FROM github_events</span>
+<span class="ln" data-n="30">    WHERE repo_name = &#x27;bitcoin/bitcoin&#x27;</span>
+<span class="ln" data-n="31">    GROUP BY actor_login</span>
+<span class="ln" data-n="32">    ORDER BY days_active DESC</span>
+<span class="ln" data-n="33">)</span>
+<span class="ln" data-n="34">-- I filter after grouping, and this line does the excluding my</span>
+<span class="ln" data-n="35">-- header describes: a contributor whose first and last events land</span>
+<span class="ln" data-n="36">-- on the same day gets a span of zero and drops out here.</span>
+<span class="ln" data-n="37">WHERE days_active &gt; 0</span>
+<span class="ln" data-n="38">-- I sort before I limit on purpose. If I limited first, I would get</span>
+</code></pre></figure></article>
+
+<section><h2>My visual sheets</h2><p>I include all six PNG sheets from my visuals folder. My VISUAL.md describes five sheets and does not list schematic.png, so its count disagrees with the folder, which holds six. I show all six and I note that discrepancy here, on the page.</p><div class="sheets">
+<figure class="sheet"><img src="https://raw.githubusercontent.com/Epsilon0xCell/Multiple-Programming-Languages/main/Multiple-Programming-Languages-Visuals/architecture.png" alt="Architecture sheet" loading="lazy"><figcaption>Architecture: I show the put together view, with the biggest file at the top, the next largest files under it, and real function or class names read from the source.</figcaption></figure>
+<figure class="sheet"><img src="https://raw.githubusercontent.com/Epsilon0xCell/Multiple-Programming-Languages/main/Multiple-Programming-Languages-Visuals/flowchart.png" alt="Flowchart sheet" loading="lazy"><figcaption>Flowchart: I show the run, starting at the entry file, passing through the real steps the code takes, and ending where the code ends.</figcaption></figure>
+<figure class="sheet"><img src="https://raw.githubusercontent.com/Epsilon0xCell/Multiple-Programming-Languages/main/Multiple-Programming-Languages-Visuals/product-map.png" alt="Product map sheet" loading="lazy"><figcaption>Product map: I show what the project is for, what goes in, what comes out, and where it stops.</figcaption></figure>
+<figure class="sheet"><img src="https://raw.githubusercontent.com/Epsilon0xCell/Multiple-Programming-Languages/main/Multiple-Programming-Languages-Visuals/components.png" alt="Components sheet" loading="lazy"><figcaption>Components: I show the parts of the tree and how many files each part holds.</figcaption></figure>
+<figure class="sheet"><img src="https://raw.githubusercontent.com/Epsilon0xCell/Multiple-Programming-Languages/main/Multiple-Programming-Languages-Visuals/statistics.png" alt="Statistics sheet" loading="lazy"><figcaption>Statistics: I show the counts for the repo, drawn as bars a reader can check against the files.</figcaption></figure>
+<figure class="sheet"><img src="https://raw.githubusercontent.com/Epsilon0xCell/Multiple-Programming-Languages/main/Multiple-Programming-Languages-Visuals/schematic.png" alt="Schematic sheet" loading="lazy"><figcaption>Schematic: I show the system as a machine, with a parts list in flow order, four boxes for jupyterNotebook.ipynb, rust.rs, html.html, and sql.sql with their line counts, on a base plate labelled as the repo itself. This sheet is in the folder but is not listed in VISUAL.md.</figcaption></figure>
+</div></section>
+</main>
+<footer><p>Built by Epsilon0xCell</p><p><a href="https://github.com/Epsilon0xCell/Multiple-Programming-Languages">My repo</a> and <a href="https://github.com/Epsilon0xCell">my GitHub profile</a>. I printed the code as written, I ran only what I say I ran, and I left the empty Solidity stub empty.</p></footer>
+<script>
+/* I reveal each chapter once, in reading order, as it enters view. I gate the hidden start state on a js class, so the page is complete with JavaScript off. */
+document.documentElement.classList.add("js");
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("seen");io.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll(".chapter,.sheet").forEach(function(el){io.observe(el);});
+</script>
+</body></html>
