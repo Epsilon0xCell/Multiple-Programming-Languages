@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60" role="img" aria-label="Full waggle flight line separator: loop, wiggle run, loop">
+<g fill="none" stroke="#4a3a22" stroke-width="5" stroke-dasharray="1 14" stroke-linecap="round">
+<path d="M112,30 a52,24 0 1,1 104,0 a52,24 0 1,1 -104,0"/>
+<path d="M216,30 L470,22 L724,38 L984,30"/>
+<path d="M984,30 a52,24 0 1,1 104,0 a52,24 0 1,1 -104,0"/>
+</g>
+</svg>

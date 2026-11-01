@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" role="img" aria-label="A scout performs the waggle dance on the comb while lane traffic passes and attendants listen">
+<rect width="1200" height="340" fill="#a89878"/>
+<g fill="#8a764f"><rect x="0" y="30" width="1200" height="12"/><rect x="0" y="86" width="1200" height="12"/></g>
+<g fill="#c8963c">
+<ellipse cx="60" cy="36" rx="15" ry="9"><animate attributeName="cx" values="60;1140;60" dur="26s" repeatCount="indefinite"/></ellipse>
+<ellipse cx="1140" cy="64" rx="15" ry="9"><animate attributeName="cx" values="1140;60;1140" dur="31s" repeatCount="indefinite"/></ellipse>
+<ellipse cx="300" cy="92" rx="15" ry="9"><animate attributeName="cx" values="300;900;300" dur="22s" repeatCount="indefinite"/></ellipse>
+</g>
+<ellipse cx="600" cy="215" rx="290" ry="105" fill="#c4b08a"/>
+<g fill="none" stroke="#4a3a22" stroke-width="4" stroke-dasharray="1 13" stroke-linecap="round">
+<path d="M452,215 a74,58 0 1,1 148,0 a74,58 0 1,1 -148,0" opacity="0.55"/>
+<path d="M600,158 q10,57 0,114" opacity="0.55"/>
+<path d="M600,158 a74,58 0 1,1 -0.1,0" opacity="0"/>
+</g>
+<g>
+<animateMotion dur="12s" repeatCount="indefinite" path="M526,215 a74,57 0 1,1 148,0 a74,57 0 1,1 -148,0 L600,158 L600,272 a74,57 0 1,0 148,0 a74,57 0 1,0 -148,0"/>
+<ellipse rx="17" ry="24" fill="#e2ac3e"/>
+<rect x="-16" y="-6" width="32" height="8" fill="#7a5c6e"/>
+<rect x="-14" y="10" width="28" height="7" fill="#7a5c6e"/>
+<ellipse cy="-30" rx="11" ry="9" fill="#54402a"/>
+</g>
+<g stroke="#54402a" stroke-width="3" fill="#c8963c">
+<ellipse cx="392" cy="168" rx="13" ry="18"/><ellipse cx="392" cy="262" rx="13" ry="18"/>
+<ellipse cx="808" cy="168" rx="13" ry="18"/><ellipse cx="808" cy="262" rx="13" ry="18"/>
+<ellipse cx="470" cy="126" rx="13" ry="18"/><ellipse cx="730" cy="126" rx="13" ry="18"/>
+</g>
+<g stroke="#54402a" stroke-width="3">
+<line x1="392" y1="146" x2="386" y2="132"><animate attributeName="y2" values="132;132;124;132" keyTimes="0;0.86;0.93;1" dur="12s" repeatCount="indefinite"/></line>
+<line x1="808" y1="146" x2="814" y2="132"><animate attributeName="y2" values="132;132;124;132" keyTimes="0;0.86;0.93;1" dur="12s" repeatCount="indefinite"/></line>
+<line x1="470" y1="104" x2="464" y2="90"><animate attributeName="y2" values="90;90;82;90" keyTimes="0;0.86;0.93;1" dur="12s" repeatCount="indefinite"/></line>
+<line x1="730" y1="104" x2="736" y2="90"><animate attributeName="y2" values="90;90;82;90" keyTimes="0;0.86;0.93;1" dur="12s" repeatCount="indefinite"/></line>
+</g>
+<g>
+<ellipse cx="80" cy="326" rx="14" ry="8" fill="#e2ac3e"><animate attributeName="cx" values="80;560" dur="17s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0" keyTimes="0;0.94;1" dur="17s" repeatCount="indefinite"/></ellipse>
+<circle cx="66" cy="320" r="5" fill="#d8dadc"><animate attributeName="cx" values="66;546" dur="17s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;1;0" keyTimes="0;0.94;1" dur="17s" repeatCount="indefinite"/></circle>
+</g>
+</svg>

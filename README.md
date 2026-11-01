@@ -1,8 +1,17 @@
-![Banner](banner.png)
+![Intro: a scout dances on the comb and a crescent of attendants faces her, listening](intro-banner.png)
+
 
 # Multiple-Programming-Languages
 
+![Banner](banner.png)
+
+![Scene](scene.svg)
+
 A small collection of example programs, one per language, kept as a tour of different languages rather than as a single project. Each file in `src/` stands alone.
+
+![Separator](sep-heavy.svg)
+
+![Frame top bar](heading-plate.svg)
 
 ## Files
 
@@ -17,8 +26,18 @@ A small collection of example programs, one per language, kept as a tour of diff
 - `src/latex.tex`: a LaTeX university assignment document (ENGE401) with worked solutions.
 - `src/r.r`: an R script estimating pi by Monte Carlo simulation.
 - `src/rust.rs`: a Rust guessing game (needs a Cargo project with `rand 0.8.3`, as noted in its own header comment).
+
+> Keeper's chalk mark: the Rust example needs its Cargo project, with rand at version 0.8.3, before it can run at all.
 - `src/solidity.sol`: a Solidity 0.7.1 contract sketch with `hello`, `helloGas`, and balance helpers; `getAccountBalance` is left as an empty exercise stub in the original.
+
+> Keeper's chalk mark: the Solidity balance helper is an unfinished exercise. The sketch shows its shape; it does not yet do the work.
 - `src/sql.sql`: a ClickHouse-style query estimating contributor longevity from a GitHub events table; it is an example query, not a portable SQL script.
+
+> Keeper's chalk mark: the SQL example targets one GitHub events table in ClickHouse style. It is not portable SQL, and it is not presented as such.
+
+![Separator](sep-light.svg)
+
+![Frame top bar](heading-plate-plain.svg)
 
 ## Verified behaviour and limits
 
